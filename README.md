@@ -95,7 +95,7 @@ The function should create in the given div the following html:
 - p tag
   - This will have an `id` of 'status-code'
   - text content depending on the `status` and `ok` properties of the `statusInfoObj`. The template looks like this:
-    - "Status code: [status code], [if `ok` is true then print 'OK', otherwise 'FALSE']"
+    - "Status code: [status code], [if `ok` is true then print 'OK', otherwise 'FAIL']"
   - Here are some actual examples text outputs:
     - Status code: 200, OK!
     - Status code: 201, OK!
@@ -112,7 +112,7 @@ The function should create in the given div the following html:
 
 ## Question 6 - renderUsers
 - FUNCTION ARGS
-  - usersUl: an `html element` of a `ul` that function will add its new `li`s to
+  - usersUl: an `HTMLElement` of a `ul` that this function will add new `li`s to, one for each user in the array
   - users: an `array` of `user` objects, each will have a LOT of properties from the API, but the only ones we care about for this function are `username` and `id`
 
 This function will mutate the given `ul` by creating `li`s with `button` elements inside them. For each `user` in the `users` array, create a li like this (DON'T FORGET THE DATA ATTRIBUTE)
@@ -126,7 +126,7 @@ This function will mutate the given `ul` by creating `li`s with `button` element
 
 ## Question 7 - renderPosts
 - FUNCTION ARGS
-  - postsUl: an html element of a `ul` that we will add `li`s to
+  - postsUl: an `HTMLElement` of a `ul` that this function will add `li`s to, one for each post
   - posts: an array of `post` (as in "blog posts") objects, each one will have an `id`, `title`, and `body` attribute.
 
 This function works just like render users, but it makes posts instead. It will render out however many `posts` its given into the `ul`:
@@ -143,8 +143,8 @@ Note: all the titles and bodies of the api are fake latin gibberish.
 
 ## Question 8 - renderNewUser
 - FUNCTION ARGS
-  - newUserDiv: an html element of a `div` that we will mutate and add our `newUserInfo`
-  - newUserInfo: an object with a at least a `username` and `email` property, both are strings
+  - newUserDiv: an `HTMLElement` of a `div` that we will mutate and add our `newUserInfo`
+  - newUserInfo: an object with at least a `username` and `email` property, both are strings
 
 This function is real simple! No arrays, just mutate the div to have an `h2` and `p` tag, no id's necessary.
 
@@ -163,7 +163,8 @@ Ok, last part! The final test is putting everything together, these are called "
 
 Let's also mix things up: instead of listing questions one by one, let's use "User Stories" (which are of course backed up by tests) for this final section. Use all the fetch and render functions we just made!
 
-- our page should render the status of `https://jsonplaceholder.typicode.com/users` properly
+- The page should render the basic page layout on load.
+- The page should render the status of `https://jsonplaceholder.typicode.com/users` properly
 - All 10 user buttons should be visible at the start of the page
 - Since we haven't requested any yet, no posts should be displayed
 - When we click on a user's button, it should load up 3 of their posts in the post section
